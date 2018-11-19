@@ -1,1 +1,4 @@
-numpy
+tensorflow
+nltk
+tqdm
+jinja2
