@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>BiDAF Demo</title>
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
+  
+  </head>
+  <body>
+	
+	<div class="container" role="main">
+		<form action="/predict" method="post" id="paraForm">
+		<div> <!--<div class="jumbotron">-->
+			<h1 class="display-3" style="margin-top:20px; margin-bottom:0px;"> Bi-directional Attention Flow Demo</h1>
+			<h3 style="margin-top:5px; margin-bottom:20px;">for <a href="https://stanford-qa.com" target="_blank">Stanford Question Answering Dataset (SQuAD)</a></h3>
+			<p style="font-size:16px;"><strong>Direction</strong> : Write a paragraph and your question. The answer is always a subphrase of the paragraph - remember it when you ask a question!</p>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-md-6">
+				<h4><span class="label label-primary">Paragraph</span></h4>
+				<textarea name="para" style="resize:none" class="form-control" id="para" rows="10">
+				</textarea>
+			</div>
+			<div class="col-md-6" id="qa">
+				<div id="current">
+					<h4>
+						<span class="label label-primary">Question</span>
+					</h4>
+					<input type="text" name="ques" class="form-control" id="ques">
+					<br>
+					<button type="submit" class="btn btn-sm btn-default" id="submit">submit</button>
+
+					<div id="loading" style="display: none;"><img src="https://webster.cs.washington.edu/images/babynames/loading.gif" alt="icon">loading</div></div>
+
+					<h4>
+						<span class="label label-primary">Answer</span>
+					</h4>
+					<textarea readonly="" class="form-control" style="resize: none;"><%= answer %></textarea></div>
+			</div>
+			<div>
+				
+		</div>
+	</form>
+		<hr />
+		<div>
+			<p>Demo by : <a href="https://github.com/namansachdeva" target="_blank">Naman Sachdeva, Ajay and Anshul Koul</a></p>
+		</div>
+	</div>
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	<!-- <script src="bootstrap/js/bootstrap.min.js"></script>-->
+	<script src="../public/jquery-3.1.0.min.js"></script>
+	<script src="../public/jszip.min.js"></script>
+	<script src="../public/index.js"></script>
+  </body>
+</html>
