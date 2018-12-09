@@ -4,7 +4,7 @@ var ejs = require('ejs')
 var bodyParser = require('body-parser')
 var ps = require('python-shell')
 const app = express();
-app.set('port', 5000)
+app.set('port', process.env.PORT || 5000)
 
 app.use(require('body-parser').urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
