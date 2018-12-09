@@ -10,7 +10,8 @@ app.use(require('body-parser').urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res){
-	res.render('form', {answer: ""});
+	//res.render('form', {answer: "", paragraph: "", question: ""});
+	res.render('form');
 })
 
 app.post('/predict',function(req, res){
@@ -31,7 +32,8 @@ app.post('/predict',function(req, res){
 		if (err) throw err;
 	  	// results is an array consisting of messages collected during execution
 	  	console.log('results: %j', results);
-	  	res.render('form', {answer: results[0]})
+	  	//res.render('form', {answer: results[0], paragraph: mPara, question: mQues})
+	  	res.send(results[0])
 	});
 })
 
